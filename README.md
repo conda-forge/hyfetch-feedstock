@@ -9,8 +9,8 @@ Package license: MIT
 
 Summary: Command-line tool that presents system info with LGBTQ+ pride flags
 
-HyFetch is a command line script to display information about your Linux system, such as amount of installed packages, OS and kernel version, active GTK theme, CPU info, and used/available memory. It is a fork of neofetch, and adds pride flag coloration to the OS logo.
-Hyfetch also has the ability to integrate with other system info tools, such as fastfetch, to use them to gather info that is then displayed through hyfetch.
+HyFetch is a command line script to display information about your Linux system,  such as amount of installed packages, OS and kernel version, active GTK theme,  CPU info, and used/available memory. It is a fork of neofetch, and adds pride flag  coloration to the OS logo.
+Hyfetch also has the ability to integrate with other system info tools, such as  fastfetch, to use them to gather info that is then displayed through hyfetch.
 
 
 Current build status
