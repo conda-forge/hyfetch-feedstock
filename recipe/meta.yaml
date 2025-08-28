@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/HyFetch-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/HyFetch-{{ version }}.tar.gz
   sha256: ddeb422fd797c710f0ad37d584fac466df89e39feddeef765492b2c0b529616e
 
 build:
@@ -14,7 +14,7 @@ build:
   entry_points:
     - hyfetch=hyfetch.main:run
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
