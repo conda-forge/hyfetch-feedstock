@@ -1,13 +1,13 @@
 {% set name = "hyfetch" %}
-{% set version = "1.99.0" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/HyFetch-{{ version }}.tar.gz
-  sha256: ddeb422fd797c710f0ad37d584fac466df89e39feddeef765492b2c0b529616e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d11eed4b6082095a9e41272fb846e9ed029b172847c9d30e8646eabee9da2b12
 
 build:
   skip: true  # [py<37]
