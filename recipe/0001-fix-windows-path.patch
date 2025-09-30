@@ -1,4 +1,4 @@
-From 3e13021b71e001d132ecbc672575ceec87f28808 Mon Sep 17 00:00:00 2001
+From 396f2bc7cdf8f87609917c1d545236689c496330 Mon Sep 17 00:00:00 2001
 From: Etaoin Wu <me@etaoinwu.com>
 Date: Mon, 29 Sep 2025 15:52:30 -0700
 Subject: [PATCH] fix (build): attempt to fix windows path handling
@@ -9,7 +9,7 @@ Subject: [PATCH] fix (build): attempt to fix windows path handling
  2 files changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/crates/hyfetch/Cargo.toml b/crates/hyfetch/Cargo.toml
-index bfee14da..1dc9068e 100644
+index bfee14da..ae7d21da 100644
 --- a/crates/hyfetch/Cargo.toml
 +++ b/crates/hyfetch/Cargo.toml
 @@ -44,7 +44,8 @@ which = { workspace = true, features = [] }
@@ -18,7 +18,7 @@ index bfee14da..1dc9068e 100644
  unicode-normalization = { workspace = true, features = ["std"] }
 -fs_extra = "1.3.0"
 +# fs_extra = "1.3.0"
-+fs_extra = { git = "https://github.com/SpriteOvO/fs_extra.git", branch = "patch-1" }
++fs_extra = { git = "https://github.com/EtaoinWu/fs_extra.git", branch = "debug-print" }
  
  [target.'cfg(windows)'.dependencies]
  enable-ansi-support = { workspace = true, features = [] }
