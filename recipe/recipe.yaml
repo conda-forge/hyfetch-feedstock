@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/${{ upstream }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
   sha256: 051acbb25a60ac57e8a8b43159f032a9bcec9b25cd1ed7854899f6ad3bcbd6d5
-  patches:
-    - 0001-fix-windows-path.patch
 
 build:
   number: 0
@@ -20,8 +18,11 @@ build:
       CARGO_PROFILE_RELEASE_STRIP: symbols
       CARGO_PROFILE_RELEASE_LTO: fat
     content:
-      # TODO add --lock back, remove --debug here
-      - cargo auditable install --no-track --debug --bins --root ${{ PREFIX }} --path ./crates/hyfetch
+      # dirty solution for build failure caused by win32 symlink
+      - if: win
+        then:
+          - del %PREFIX%\hyfetch\scripts\neowofetch
+      - cargo auditable install --no-track --lock --bins --root ${{ PREFIX }} --path ./crates/hyfetch
       - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
 requirements:
