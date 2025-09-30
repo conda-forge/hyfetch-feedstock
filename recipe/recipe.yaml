@@ -21,7 +21,7 @@ build:
       # dirty solution for build failure caused by win32 symlink
       - if: win
         then:
-          - del %PREFIX%\hyfetch\scripts\neowofetch
+          - del hyfetch\scripts\neowofetch
       - cargo auditable install --no-track --locked --bins --root ${{ PREFIX }} --path ./crates/hyfetch
       - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
