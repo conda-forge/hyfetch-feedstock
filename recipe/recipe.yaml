@@ -22,7 +22,7 @@ build:
       - if: win
         then:
           - del %PREFIX%\hyfetch\scripts\neowofetch
-      - cargo auditable install --no-track --lock --bins --root ${{ PREFIX }} --path ./crates/hyfetch
+      - cargo auditable install --no-track --locked --bins --root ${{ PREFIX }} --path ./crates/hyfetch
       - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
 requirements:
