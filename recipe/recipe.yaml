@@ -1,7 +1,7 @@
 context:
   name: hyfetch
   upstream: hykilpikonna
-  version: "2.0.5"
+  version: "2.1.1"
 
 package:
   name: ${{ name|lower }}
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/${{ upstream }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 32942e558288f7939ae4ff1cc2ceccd9dcc9112074afc598b230c03b13c7bfca
+  sha256: d83708caafa560531ee9dea002aa58123272a0209b4e6b296bae34c87665004a
 
 build:
-  number: 1
+  number: 0
   script:
     env:
       CARGO_PROFILE_RELEASE_STRIP: symbols
@@ -23,6 +23,7 @@ build:
 
 requirements:
   build:
+    - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('rust') }}
     - cargo-bundle-licenses
